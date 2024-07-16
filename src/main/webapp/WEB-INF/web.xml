@@ -13,4 +13,37 @@
   <url-pattern>/signup</url-pattern>
   </servlet-mapping>
   
+  
+  <servlet>
+  <servlet-name>log</servlet-name>
+  <servlet-class>studentwithhtmlm12.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>log</servlet-name>
+  <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  <servlet-name>sel</servlet-name>
+  <servlet-class>studentwithhtmlm12.SelectServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>sel</servlet-name>
+  <url-pattern>/select</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 </web-app>
