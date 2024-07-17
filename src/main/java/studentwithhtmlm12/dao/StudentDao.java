@@ -39,6 +39,38 @@ public Student findStudentById(int id) {
 	}
 }
 
+public Student deleteStudent(int id) {
+ EntityManager entityManager=getEntityManager();
+ Student dbStudent=entityManager.find(Student.class, id);
+ if(dbStudent!=null) {
+//	 id is preset then i can delete the data
+	 EntityTransaction entityTransaction=entityManager.getTransaction();
+	 entityTransaction.begin();
+	 entityManager.remove(dbStudent);
+	 entityTransaction.commit();
+	 return dbStudent;
+ }else {
+	 return null;
+ }
+}
+
+public Student updateStudent(int id, Student student) {
+	 EntityManager entityManager=getEntityManager();
+	 Student dbStudent=entityManager.find(Student.class, id);
+	 if(dbStudent!=null) {
+//		 id is present
+		 EntityTransaction entityTransaction=entityManager.getTransaction();
+		 entityTransaction.begin();
+		 student.setId(id);
+		 entityManager.merge(student);
+		 entityTransaction.commit();
+		 return student;
+	 }else {
+		 return null;
+//		 id is notpresent to update the data
+	 }
+}
+
 
 
 

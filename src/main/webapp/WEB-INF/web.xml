@@ -33,8 +33,22 @@
   <url-pattern>/select</url-pattern>
   </servlet-mapping>
   
-  
-  
+  <servlet>
+  <servlet-name>del</servlet-name>
+  <servlet-class>studentwithhtmlm12.DeleteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>del</servlet-name>
+  <url-pattern>/delete</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  <servlet-name>up</servlet-name>
+  <servlet-class>studentwithhtmlm12.UpdateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>up</servlet-name>
+  <url-pattern>/update</url-pattern>
+  </servlet-mapping>
   
   
   
