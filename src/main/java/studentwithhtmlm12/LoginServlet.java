@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -39,20 +40,16 @@ public class LoginServlet extends HttpServlet {
 			
 			if(password.equals(studentwhowantstologin.getPassword())) {
 //				login success
-				PrintWriter printWriter=resp.getWriter();
-				printWriter.print("LOGIN SUCCESS");
+				resp.sendRedirect("https://www.javatpoint.com/");
 			}else {
 //				invalid password
-				PrintWriter printWriter=resp.getWriter();
-				printWriter.print("LOGIN FAILURE ITS AN INVALID PASSWORD");
+				RequestDispatcher dispatcher=req.getRequestDispatcher("login.html");
+				dispatcher.include(req, resp);
 			}
-			
-			
-			
 		}else {
 //			email is not present it is invalid
-			PrintWriter printWriter=resp.getWriter();
-			printWriter.print("SORRY FAILED TO LOGIN INVALID EMAIL");
+			RequestDispatcher dispatcher=req.getRequestDispatcher("login.html");
+			dispatcher.include(req, resp);
 		}
 		
 		
